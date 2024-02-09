@@ -1,0 +1,18 @@
+{
+  "name": "@dylanlord/modelis-carto-plug",
+  "version": "0.1.0",
+  "description": "composant cartographique réutilisable permant de charger les éléments de configuration d'une carte",
+  "main": "./dist/index.js",
+  "module": "./dist/index.mjs",
+  "types": "./dist/index.d.ts",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "tsup"
+  },
+  "author": "Dylan Adekpe",
+  "license": "MIT",
+  "devDependencies": {
+    "tsup": "^8.0.1",
+    "typescript": "^5.3.3"
+  }
+}
