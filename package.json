@@ -12,7 +12,12 @@
   "author": "Dylan Adekpe",
   "license": "MIT",
   "devDependencies": {
+    "@types/proj4": "^2.5.5",
+    "ol": "^8.2.0",
     "tsup": "^8.0.1",
     "typescript": "^5.3.3"
+  },
+  "dependencies": {
+    "proj4": "^2.10.0"
   }
 }
