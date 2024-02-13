@@ -17,6 +17,8 @@ import { Coordinate } from "ol/coordinate";
 import { PinchZoom, defaults as defaultInteractions } from "ol/interaction";
 import { defaults as defaultControls } from "ol/control";
 import BaseLayer from "ol/layer/Base";
+import TileLayer from "ol/layer/Tile";
+import OSM from "ol/source/OSM";
 
 proj4.defs([
   ["EPSG:4326", "+title=WGS 84 (long/lat) +proj=longlat +ellps=WGS84 +datum=WGS84 +units=degrees"],
@@ -43,11 +45,15 @@ export function transforAllCoords({ coordinate, espg }: ParcelleProps) {
   return transform;
 }
 
-export function loadMap(maptarget: string, layers: BaseLayer[] | undefined) {
+export function loadMap(maptarget: string, layers?: BaseLayer) {
   const map = new Map({
     target: maptarget,
     interactions: defaultInteractions().extend([new PinchZoom()]),
-    layers: layers,
+    layers: [
+      new TileLayer({
+        source: new OSM(),
+      }),
+    ],
     controls: defaultControls().extend([
       new Attribution(),
       new ZoomToExtent({
